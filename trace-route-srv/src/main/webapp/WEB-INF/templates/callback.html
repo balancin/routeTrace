@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8"/>
+	<title>Autenticado</title> 
+	
+	<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script th:inline="javascript">
+	/*<![CDATA[*/
+	        
+	    var token = /*[[${token}]]*/ '';
+
+		       
+	    $( document ).ready(function() {
+	        console.log( "document loaded" );
+	    });
+	 
+	    $( window ).load(function() {
+	        console.log( "window loaded" );
+	        myVar = setInterval(function () {
+	        	
+	        	submitButton(token)
+		        window.clearInterval(myVar);
+	        	
+        	}, 3000);
+	    });
+	    
+	/*]]>*/
+	</script>
+    
+	</head>
+	
+	<body>
+	
+	<br/><br/><br/><br/><br/>
+	Autenticando...
+
+	</body>
+	
+</html>
+

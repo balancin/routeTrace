@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beansProjectDescription>
+	<version>1</version>
+	<pluginVersion><![CDATA[3.6.2.201410090854-RELEASE]]></pluginVersion>
+	<configSuffixes>
+		<configSuffix><![CDATA[xml]]></configSuffix>
+	</configSuffixes>
+	<enableImports><![CDATA[false]]></enableImports>
+	<configs>
+	</configs>
+	<autoconfigs>
+		<config>java:br.com.balancin.gatemaster.Controller.UserRestController</config>
+		<config>java:br.com.balancin.gatemaster.SampleTomcatApplication</config>
+	</autoconfigs>
+	<configSets>
+	</configSets>
+</beansProjectDescription>

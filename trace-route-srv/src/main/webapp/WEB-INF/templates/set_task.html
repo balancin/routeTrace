@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8"/>
+	<title>Exercises</title>  
+
+	<!-- Base Css Files -->
+	<link href="/assets/libs/jqueryui/ui-lightness/jquery-ui-1.10.4.custom.min.css" rel="stylesheet" />
+	<link href="/assets/libs/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+	<link href="/assets/libs/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+	<link href="/assets/libs/fontello/css/fontello.css" rel="stylesheet" />
+	<link href="/assets/libs/animate-css/animate.min.css" rel="stylesheet" />
+	<link href="/assets/libs/nifty-modal/css/component.css" rel="stylesheet" />
+	<link href="/assets/libs/magnific-popup/magnific-popup.css" rel="stylesheet" /> 
+	<link href="/assets/libs/ios7-switch/ios7-switch.css" rel="stylesheet" /> 
+	<link href="/assets/libs/pace/pace.css" rel="stylesheet" />
+	<link href="/assets/libs/sortable/sortable-theme-bootstrap.css" rel="stylesheet" />
+	<link href="/assets/libs/bootstrap-datepicker/css/datepicker.css" rel="stylesheet" />
+	<link href="/assets/libs/jquery-icheck/skins/all.css" rel="stylesheet" />
+	<!-- Code Highlighter for Demo -->
+	<link href="/assets/libs/prettify/github.css" rel="stylesheet" />
+
+	<!-- Extra CSS Libraries Start -->
+	<link href="/assets/libs/bootstrap-select/bootstrap-select.min.css" rel="stylesheet" type="text/css" />
+	<link href="/assets/libs/bootstrap-select2/select2.css" rel="stylesheet" type="text/css" />
+	<link href="/assets/libs/bootstrap-xeditable/css/bootstrap-editable.css" rel="stylesheet" type="text/css" />
+	<link href="/assets/libs/bootstrap-select2/select2.css" rel="stylesheet" type="text/css" />
+	<link href="/assets/css/style.css" rel="stylesheet" type="text/css" />
+	<!-- Extra CSS Libraries End -->
+	<link href="/assets/css/style-responsive.css" rel="stylesheet" />
+
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+		<![endif]-->
+
+		<link rel="shortcut icon" href="/assets/img/favicon.ico"/>
+		<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png" />
+		<link rel="apple-touch-icon" sizes="57x57" href="/assets/img/apple-touch-icon-57x57.png" />
+		<link rel="apple-touch-icon" sizes="72x72" href="/assets/img/apple-touch-icon-72x72.png" />
+		<link rel="apple-touch-icon" sizes="76x76" href="/assets/img/apple-touch-icon-76x76.png" />
+		<link rel="apple-touch-icon" sizes="114x114" href="/assets/img/apple-touch-icon-114x114.png" />
+		<link rel="apple-touch-icon" sizes="120x120" href="/assets/img/apple-touch-icon-120x120.png" />
+		<link rel="apple-touch-icon" sizes="144x144" href="/assets/img/apple-touch-icon-144x144.png" />
+		<link rel="apple-touch-icon" sizes="152x152" href="/assets/img/apple-touch-icon-152x152.png" />
+		
+	</head>
+	<body class="fixed-left">
+
+		
+		<!-- Top Bar Start -->
+		<div class="topbar">
+			<div class="topbar-left">
+				<div class="logo">
+					<h1><a href="#"><img src="/assets/img/logo.png" alt="Logo"/></a></h1>
+				</div>
+				<button class="button-menu-mobile open-left">
+					<i class="fa fa-bars"></i>
+				</button>
+			</div>
+			<!-- Button mobile view to collapse sidebar menu -->
+			<div class="navbar navbar-default" role="navigation">
+				<div class="container">
+					<div class="navbar-collapse2">
+						
+						<ul class="nav navbar-nav navbar-right top-navbar">
+							<li class="dropdown topbar-profile">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown">Jane <strong>Doe</strong> <i class="fa fa-caret-down"></i></a>
+								<ul class="dropdown-menu">
+									<li><a href="#">My Profile</a></li>
+									<li><a href="#">Change Password</a></li>
+									<li><a href="#">Account Setting</a></li>
+									<li class="divider"></li>
+									<li><a href="#"><i class="icon-help-2"></i> Help</a></li>
+									<li><a href="lockscreen.html"><i class="icon-lock-1"></i> Lock me</a></li>
+									<li><a class="md-trigger" data-modal="logout-modal"><i class="icon-logout-1"></i> Logout</a></li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+					<!--/.nav-collapse -->
+				</div>
+			</div>
+		</div>
+		<!-- Top Bar End -->
+
+		<!-- Start right content -->
+		<div class="content-page">
+<div class="content">
+
+<p><a th:href="${'list?email='+email}">voltar</a></p>
+
+<p>Procurar template: <input type="text"/></p><br/>
+	
+	<form th:action="save" method="get">
+	
+	<input type="hidden" name="email" th:value="${email}"/>
+	<input type="hidden" name="id" th:value="${task.id}"/>
+	
+	<div class="col-sm-6 portlets">
+
+		<div class="widget">
+		
+			<div class="widget-header transparent">
+				<h2>Exercise</h2>
+			</div>
+			<div class="widget-content padding">	
+					
+				<div class="form-group">
+					<label>Name</label>
+					<input type="text" class="form-control" th:field="${task.title}"/>
+				</div>
+				
+				<div class="checkbox">
+				  <label>
+					<input type="checkbox" th:field="${task.template}" value="1"/>
+					É template ?
+				  </label>
+				</div>
+				
+				
+				
+				<!-- <div class="form-group">
+					<label class="col-sm-2 control-label">Datepicker</label>
+					<div class="col-sm-3">
+					  <input type="text" class="form-control datepicker-input"/>
+					</div>
+				</div> -->
+				 
+				<div class="form-group">
+					<label>Description:</label>
+					<input type="text" class="form-control" th:field="${task.description}"/>
+				</div>
+
+				<div class="form-group">
+					<label>Carga:</label>
+					<input type="text" class="form-control" th:field="${task.weight}"/>
+				</div>
+
+				<div class="form-group">
+					<label>Séries:</label>
+					<input type="text" class="form-control" th:field="${task.series}"/>
+				</div>
+				
+				<div class="form-group">
+				<label>Repetições:</label>
+				<input type="text" class="form-control" th:field="${task.repeats}"/>
+				</div>
+				 
+				<div class="form-group">
+					<label>Ínicio</label>
+					<span th:if="${task.start != null}">
+						<input type="text" class="form-control" data-mask="9999-99-99" name="start" th:value="${beans.uputils.formatDate(task.start)}"/>
+					</span>
+					<span th:if="${task.start == null}">
+						<input type="text" class="form-control" data-mask="9999-99-99" name="start"/>
+					</span>
+				</div>
+				
+				<div class="form-group">
+					<label>Fim</label>
+					<span th:if="${task.end != null}">
+						<input type="text" class="form-control" data-mask="9999-99-99" name="end" th:value="${beans.uputils.formatDate(task.end)}"/>
+					</span>
+					<span th:if="${task.end == null}">
+						<input type="text" class="form-control" data-mask="9999-99-99" name="end"/>
+					</span>
+				</div>
+				
+				<div class="form-group">
+				<label>Tempo em segundos:</label>
+				<input type="text" class="form-control" th:field="${task.timeInSeconds}"/>
+				</div>
+				
+				<div class="form-group">
+				<label>Parent task</label>
+				<input type="hidden" id="search_parent_tasks" name="search_parent_tasks" style="width:300px"/>
+				</div>
+				
+				<div class="form-group">
+				<label>Usuário</label>
+				<input type="hidden" id="search_user" name="search_user" style="width:300px"/>
+				</div>
+				
+				<div class="form-group">
+				<label>Parte afetada</label>
+				<input type="hidden" id="search_tags" name="search_tags" style="width:300px"/>
+				</div>
+				
+				<div class="form-group">
+				<label>Atribuir imagem</label>
+				<input type="text" class="form-control"/>
+				</div>
+				
+				<div class="form-group">
+				<label>Categoria</label>
+				<input type="hidden" id="search_categories" name="search_categories" style="width:300px"/>
+				</div>
+
+				<div class="form-group">
+					<label class="col-sm-2 control-label">Working week days</label>
+					<div class="col-sm-10">
+						<label class="radio-inline iradio">
+						  <input type="radio" th:field="${task.dayWeek}" value="0"/> Sunday
+						</label>
+						<br/>
+						<label class="radio-inline iradio">
+						  <input type="radio" th:field="${task.dayWeek}" value="1"/> Monday
+						</label>
+						<br/>
+						<label class="radio-inline iradio">
+						  <input type="radio" th:field="${task.dayWeek}" value="2"/> Tuesday
+						</label>
+						<br/>
+						<label class="radio-inline iradio">
+						  <input type="radio" th:field="${task.dayWeek}" value="3"/> Wednesday
+						</label>
+						<br/>
+						<label class="radio-inline iradio">
+						  <input type="radio" th:field="${task.dayWeek}" value="4"/> Thursday
+						</label>
+						<br/>
+						<label class="radio-inline iradio">
+						  <input type="radio" th:field="${task.dayWeek}" value="5"/> Friday
+						</label>
+						<br/>
+						<label class="radio-inline iradio">
+						  <input type="radio" th:field="${task.dayWeek}" value="6"/> Saturday
+						</label>
+					</div>
+				</div>
+				
+				<input type="submit" value="salvar" class="btn btn-default"/> <input type="button" value="remover" class="btn btn-default"/> 
+				
+			</div>
+		</div>		
+	</div>
+	
+	</form>
+
+		<!-- End right content --></div>
+	</div>
+	<!-- End of page -->
+	<!-- the overlay modal element -->
+	<div class="md-overlay"></div>
+	<!-- End of eoverlay modal -->
+	<script>
+	var resizefunc = [];
+	</script>
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="/assets/libs/jquery/jquery-1.11.1.min.js"></script>
+	<script src="/assets/libs/bootstrap/js/bootstrap.min.js"></script>
+	<script src="/assets/libs/jqueryui/jquery-ui-1.10.4.custom.min.js"></script>
+	<script src="/assets/libs/jquery-ui-touch/jquery.ui.touch-punch.min.js"></script>
+	<script src="/assets/libs/jquery-detectmobile/detect.js"></script>
+	<script src="/assets/libs/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+	<script src="/assets/libs/jquery-animate-numbers/jquery.animateNumbers.js"></script>
+	<script src="/assets/libs/ios7-switch/ios7.switch.js"></script>
+	<script src="/assets/libs/fastclick/fastclick.js"></script>
+	<script src="/assets/libs/jquery-blockui/jquery.blockUI.js"></script>
+	<script src="/assets/libs/bootstrap-bootbox/bootbox.min.js"></script>
+	<script src="/assets/libs/jquery-slimscroll/jquery.slimscroll.js"></script>
+	<script src="/assets/libs/jquery-sparkline/jquery-sparkline.js"></script>
+	<script src="/assets/libs/nifty-modal/js/classie.js"></script>
+	<script src="/assets/libs/nifty-modal/js/modalEffects.js"></script>
+	<script src="/assets/libs/sortable/sortable.min.js"></script>
+	<script src="/assets/libs/bootstrap-fileinput/bootstrap.file-input.js"></script>
+	<script src="/assets/libs/bootstrap-select/bootstrap-select.min.js"></script>
+	<script src="/assets/libs/bootstrap-select2/select2.min.js"></script>
+	<script src="/assets/libs/magnific-popup/jquery.magnific-popup.min.js"></script> 
+	<script src="/assets/libs/pace/pace.min.js"></script>
+	<script src="/assets/libs/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+	<script src="/assets/libs/jquery-icheck/icheck.min.js"></script>
+
+	<!-- Demo Specific JS Libraries -->
+	<script src="/assets/libs/prettify/prettify.js"></script>
+
+	<!-- Page Specific JS Libraries -->
+	<script src="/assets/libs/bootstrap-select/bootstrap-select.min.js"></script>
+	<script src="/assets/libs/bootstrap-inputmask/inputmask.js"></script>
+	<script src="/assets/libs/bootstrap-xeditable/js/bootstrap-editable.min.js"></script>
+	<script src="/assets/libs/bootstrap-xeditable/demo/jquery.mockjax.js"></script>
+	<script src="/assets/libs/bootstrap-xeditable/demo/demo-mock.js"></script>
+	<script src="/assets/libs/bootstrap-select2/select2.min.js"></script>
+	<script src="/assets/libs/jquery-clndr/moment-2.5.1.js"></script>
+	<script src="/assets/libs/bootstrap-typeahead/bootstrap3-typeahead.min.js"></script>
+	<script src="/assets/libs/ckeditor/ckeditor.js"></script>
+	<script src="/assets/libs/ckeditor/adapters/jquery.js"></script>
+	<script src="/assets/js/pages/advanced-forms.js"></script>
+	
+	<script th:inline="javascript">
+	/*<![CDATA[*/
+	    
+	    var token = /*[[${token}]]*/ '';
+	    var userId = /*[[${task.userId}]]*/ '';
+	    var userEmail = /*[[${userEmail}]]*/ '';
+	    var users = [];
+	    var dbUsers = /*[[${searchKeyUsers}]]*/ {'n' : 'none'};
+	    $.each(dbUsers, function(k, v) {
+	    	users.push({id: k, text: v});
+	    }); 
+	    
+	    //console.log(taskCategory+" taskCategory "+/*[[${userParentTaskData}]]*/ '');
+	    //console.log(dbCategories);
+	    
+	    var taskCategory = /*[[${taskCategoryName}]]*/ '';
+	    var taskCategoryName = "";
+	    
+	    var categories = [];
+	    var dbCategories = /*[[${categories}]]*/ {'n' : 'none'};
+	    $.each(dbCategories, function(i){
+	    	categories.push({id: dbCategories[i].name, text: dbCategories[i].name});
+	    });
+
+	    var parentTaskId = /*[[${task.parentTaskId}]]*/ '';
+	    var parentTaskTitle = /*[[${userParentTaskTitle}]]*/ '';
+	    var parentTasks = [];
+	    var dbParentTasks = /*[[${searchKeyParentTasks}]]*/ {'n' : 'none'};
+	    if(dbParentTasks != null){
+		    
+	    	$.each(dbParentTasks, function(k, v) {
+		    	parentTasks.push({id: k, text: v});
+		    });
+		    
+	    }
+	    
+	    //var taskTag = /*[[${task.category}]]*/ '';
+	    var tags = [];
+	    var dbTags = /*[[${tags}]]*/ {'n' : 'none'};
+	    $.each(dbTags, function(i){
+	    	tags.push({id: dbTags[i].name, text: dbTags[i].name});
+	    });
+	    
+	    //////////////////////////////////
+		
+		$(function(){
+
+
+			$("#search_tags").select2({
+				initSelection : function (element, callback) {
+			        var data = {id: userId, text: userEmail};
+			        callback(data);
+			    },
+			  placeholder: "Select part",
+			  allowClear: true,
+			  data: tags
+			});   
+	
+			$("#search_tags")
+			.on("select2-selecting", function(e) { 
+				//getUser(e.val, token);
+			});
+			
+			////////////////////////
+
+			
+			$("#search_user").select2({
+				initSelection : function (element, callback) {
+			        var data = {id: userId, text: userEmail};
+			        callback(data);
+			    },
+			  placeholder: "Select user",
+			  allowClear: true,
+			  data: users
+			});   
+	
+			$("#search_user")
+			.on("select2-selecting", function(e) { 
+				console.log(e.val+" e.val "+token);
+
+				/* $.post( '/task/get_parents', { token: token, to_user_id: e.val}).done(function( data ) {
+				    console.log( "Data Loaded: " + data );
+				}); */
+				
+				//getUser(e.val, token);
+			});
+			
+			if(userEmail != ''){
+				console.log("f userEmail "+userEmail);
+				$("#search_user").select2("val", userEmail);
+			}
+
+			////////////////////////
+			
+			$("#search_parent_tasks").select2({
+				initSelection : function (element, callback) {
+			        var data = {id: parentTaskId, text: parentTaskTitle};
+			        callback(data);
+			    },
+			  placeholder: "Select parent task",
+			  allowClear: true,
+			  data: parentTasks
+			});   
+
+			$("#search_parent_tasks")
+			.on("select2-selecting", function(e) { 
+				
+			});
+
+			if(parentTaskTitle != ''){
+				console.log("parentTaskTitle "+parentTaskTitle);
+				$("#search_parent_tasks").select2("val", parentTaskTitle);
+			} 
+			
+			/////////////////////
+			
+			$("#search_categories").select2({
+				initSelection : function (element, callback) {
+			        var data = {id: taskCategory, text: taskCategory};
+			        callback(data);
+			    },
+			  placeholder: "Select category",
+			  allowClear: true,
+			  data: categories
+			});   
+
+			$("#search_categories")
+			.on("select2-selecting", function(e) { 
+				//getUser(e.val, token);
+			});
+			
+			if(parentTaskTitle != ''){
+				console.log("taskCategory "+taskCategory);
+				$("#search_categories").select2("val", taskCategory);
+			} 
+			
+		});
+	    
+	/*]]>*/
+	</script>
+	
+
+</body>
+</html>

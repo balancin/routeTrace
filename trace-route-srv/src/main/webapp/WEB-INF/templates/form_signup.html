@@ -1,0 +1,61 @@
+<html>
+<head>
+    <title th:text="${pageType.title}">Titulo pagina</title>
+    <style>
+        .signup_form {
+            display:none;
+        }
+    </style>
+
+    <script src="../../js/prototype.js" th:src="@{/js/prototype.js}"></script>
+    <script src="../../js/gatemaster-core.js" th:src="@{/js/gatemaster-core.js}"></script>
+    <script src="../../js/vendor/jquery-1.9.1.min.js" th:src="@{/js/vendor/jquery-1.9.1.min.js}"></script>
+    <script src="../../js/vendor/bootstrap.min.js" th:src="@{/js/vendor/bootstrap.min.js}"></script>
+    <script type="text/javascript">
+
+        var gatemaster = new Gatemaster();
+        gatemaster.initialize();
+
+        function normalSignup(){
+            $("#signup_form").show();
+        }
+
+        $(document).ready(function() {
+            $("#later").click(function() {
+              console.log("teste ...");
+            });
+            $("#signup").click(function() {
+              console.log("teste ...");
+
+              gatemaster.callServerFunction(function(_data) {
+					console.log(_data);
+				}, [ "signup", {
+					"query" : JSON.stringify({
+						"token" : "232",
+						"question" : "23232"
+					})
+				} ]);
+
+            });
+        });
+
+        var gatemaster = new Gatemaster();
+	    gatemaster.initialize();
+
+    </script>
+
+</head>
+<body>
+<h1 th:text="${pageType.title}">Titulo pagina</h1>
+
+<a href="/connect/facebook" target="_blank">Facebook</a> | <a href="#" onclick="javascript:normalSignup();">Normal</a>
+
+<div id="signup_form" class="signup_form"><br/><br/>
+    Novo usuario:<br/>
+    E-mail: <input type="text" id="email" name="email" value=""/><br/>
+    Senha: <input type="password" id="password" name="password" value=""/> (opcional)<br/>
+    <button type="button" id="signup">Cadastrar</button> | <button type="button" id="later">Mais tarde</button>
+</div>
+
+</body>
+</html>

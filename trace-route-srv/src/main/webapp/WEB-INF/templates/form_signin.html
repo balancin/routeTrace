@@ -1,0 +1,36 @@
+<html>
+<head>
+    <title th:text="${pageType.title}">Titulo pagina</title>
+    <style>
+        .signup_form {
+        display:none;
+        }
+    </style>
+    <script src="../../js/vendor/jquery-1.9.1.min.js" th:src="@{/js/vendor/jquery-1.9.1.min.js}"></script>
+    <script src="../../js/vendor/bootstrap.min.js" th:src="@{/js/vendor/bootstrap.min.js}"></script>
+    <script type="text/javascript">
+
+        function normalSignup(){
+            alert("teste");
+            $("#signup_form").show();
+        }
+        $("#later").click(function() {
+	      alert("teste ...");
+	   });
+
+    </script>
+</head>
+<body>
+<h1 th:text="${pageType.title}">Titulo pagina</h1>
+
+<a href="/connect/facebook" target="_blank">Facebook</a> | <a href="#" onclick="javascript:normalSignup();">Normal</a>
+
+<div id="signup_form" class="signup_form"><br/><br/>
+    Ola <raw th:text="${user.name}">Nome</raw>, deseja completar seu cadastro ?<br/>
+    E-mail: <input type="text" id="email" name="email" value=""/><br/>
+    Senha: <input type="password" id="password" name="password" value=""/> (opcional)<br/>
+    <button type="button" id="signup">Cadastrar</button> | <button type="button" id="later">Mais tarde</button>
+</div>
+
+</body>
+</html>
