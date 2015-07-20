@@ -1,0 +1,3 @@
+- O conceito utilizado para "traçar uma rota de melhor caminho" aqui é o A*, conhecido algoritmo de busca.
+
+- O webservice aqui é disponibilizado via spring-boot via JSON
